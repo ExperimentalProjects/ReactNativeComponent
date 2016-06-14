@@ -1,0 +1,24 @@
+{
+  "name": "react-native-navbar",
+  "version": "1.0.0",
+  "description": "Custom navigation bar for react native",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ExperimentalProjects/ReactNativeComponent.git"
+  },
+  "keywords": [
+    "react-native",
+    "reactjs",
+    "navbar"
+  ],
+  "author": "Abhishek Singh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ExperimentalProjects/ReactNativeComponent/issues"
+  },
+  "homepage": "https://github.com/ExperimentalProjects/ReactNativeComponent#readme"
+}
