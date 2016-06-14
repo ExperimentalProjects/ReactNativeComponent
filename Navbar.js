@@ -18,7 +18,7 @@ import {
   Animated,
   Platform
 } from 'react-native';
-import { connect } from 'react-redux';
+
 import MenuButton from 'MenuButton';
 
 function getWidth() {
@@ -34,11 +34,11 @@ const width = getWidth();
 const NAV_HEIGHT = (Platform.OS === 'android' ? 48 : 44);
 const STATUSBAR_HEIGHT = (Platform.OS === 'android' ? 0 : 20);
 
-export function getNavbarHeight() {
+function getNavbarHeight() {
   return (Platform.OS === 'android' ? 48 : 44) + (Platform.OS === 'android' ? 0 : 20);
 }
 
-class Navbar extends Component {
+export default class Navbar extends Component {
 
   constructor(props) {
     super(props);
@@ -191,8 +191,3 @@ const styles = StyleSheet.create({
   }
 });
 
-function select(state) {
-  return state;
-}
-
-export default connect(select())(Navbar);
