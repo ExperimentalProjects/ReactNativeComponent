@@ -119,7 +119,7 @@ export default class Navbar extends Component {
                 accessibilityLabel={'backButton'}>
                 <Animated.Image
                   style={[styles.back, {opacity: this.state.backOpacity}]}
-                  source={require('../../../assets/images/ic_back_arrow.png')}/>
+                  source={require('./assets/ic_back_arrow.png')}/>
               </TouchableOpacity> : <View /> }
 
             <MenuButton style={styles.menuWrapper} show={this.props.show} onPress={this._openMenu}/>
