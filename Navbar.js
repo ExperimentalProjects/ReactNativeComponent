@@ -19,7 +19,7 @@ import {
   Platform
 } from 'react-native';
 
-import MenuButton from 'MenuButton';
+import {MenuButton} from 'MenuButton';
 
 function getWidth() {
   const { width } = Dimensions.get('window');
@@ -49,11 +49,10 @@ export default class Navbar extends Component {
   }
 
   static propTypes = {
-    navigator: React.PropTypes.object.isRequired,
     backPressed: React.PropTypes.func.isRequired,
     hasBack: React.PropTypes.bool.isRequired,
-    logout: React.PropTypes.func.isRequired,
     show: React.PropTypes.bool,
+    title: React.PropTypes.string,
     openMenu: React.PropTypes.func.isRequired
   };
 
@@ -81,7 +80,6 @@ export default class Navbar extends Component {
       }).start();
     }
     if (this.props.hasBack && !nextProps.hasBack) {
-      console.log('should animate out');
       Animated.timing(this.state.backOpacity, {
         toValue: 0,
         duration: 200
@@ -104,11 +102,12 @@ export default class Navbar extends Component {
   };
 
   render() {
+    const {title} = this.props;
     return (
       <View style={[styles.wrapper, {opacity: this.props.show ? 1 : 0}]}>
         <View style={styles.main}>
           <View style={styles.backgroundWrapper}>
-            <Text style={styles.title}>Sales App</Text>
+            <Text style={styles.title}>{title}</Text>
           </View>
           <View style={styles.buttonWrapper}>
             { Platform.OS === 'ios' ?
@@ -123,7 +122,6 @@ export default class Navbar extends Component {
               </TouchableOpacity> : <View /> }
 
             <MenuButton style={styles.menuWrapper} show={this.props.show} onPress={this._openMenu}/>
-
           </View>
         </View>
       </View>);
@@ -158,7 +156,8 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 0,
     overflow: 'visible',
-    backgroundColor: '#5C92C1',
+    backgroundColor: '#19FCE4',
+    borderRadius: 2,
     width,
     height: getNavbarHeight(),
     alignItems:'center'
