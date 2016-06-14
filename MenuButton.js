@@ -13,17 +13,17 @@ import {
 
 export default class MenuButton extends Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      opacity: new Animated.Value(1)
+    }
+  };
+
   static propTypes = {
     onPress: React.PropTypes.func.isRequired,
     show: React.PropTypes.bool.isRequired
   };
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      opacity: new Animated.Value(0)
-    }
-  }
 
   componentWillUpdate = (nextProps) => {
     if (nextProps.show && !this.props.show) {
@@ -38,11 +38,11 @@ export default class MenuButton extends Component {
       <Animated.View style={{opacity: this.state.opacity}}>
         <TouchableOpacity style={this.props.style}
                           onPress={this.props.onPress}>
-          <View><Text>MENU</Text></View>
+          <Image style={styles.menu} source={require('./assets/ic_menu.png')}/>
         </TouchableOpacity>
       </Animated.View>
     );
-  }
+  };
 }
 
 const styles = StyleSheet.create({

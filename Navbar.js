@@ -19,7 +19,7 @@ import {
   Platform
 } from 'react-native';
 
-import {MenuButton} from 'MenuButton';
+import MenuButton from './MenuButton.js';
 
 function getWidth() {
   const { width } = Dimensions.get('window');
